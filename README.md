@@ -28,3 +28,8 @@ robot -d Results --include tagName /path/path/folder/
 ```sh
 robot -d Results -t "test case name here" /path/path/file.robot
 ```
+
+## Docker Hub
+
+This automation requires you to install Docker. Kindly install based on your OS:
+`https://hub.docker.com/r/fandratt/robotframework`
