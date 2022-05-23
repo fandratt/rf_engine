@@ -26,11 +26,9 @@ fnvhash
 selenium
 Appium-Python-Client
 Appium-Flutter-Finder
-robotframework-redislibrary==1.2.3
+robotframework-redislibrary==1.2.4
 robotframework-notifications
 openpyxl
-redis
-redis-py-cluster
 chardet
 urllib3
 robotframework-testrail
