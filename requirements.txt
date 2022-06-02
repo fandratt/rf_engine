@@ -1,6 +1,5 @@
 monotonic
 netifaces
-pyvirtualdisplay
 webdrivermanager
 cryptography==36.0.0
 robotframework
@@ -25,7 +24,6 @@ cassandra-driver
 fnvhash
 selenium
 Appium-Python-Client
-Appium-Flutter-Finder
 robotframework-redislibrary==1.2.4
 robotframework-notifications
 openpyxl
