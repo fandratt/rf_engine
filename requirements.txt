@@ -4,7 +4,7 @@ webdrivermanager
 cryptography==36.0.0
 robotframework
 robotframework-sshlibrary
-selenium<=4
+selenium<=4.0.0
 robotframework-seleniumlibrary
 requests==2.27.1
 robotframework-jsonlibrary
