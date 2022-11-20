@@ -35,3 +35,5 @@ robotframework-datadriver
 robotframework-jira
 robotframework-pabot
 PyVirtualDisplay
+robotframework-excellentlibrary
+robotframework-excellib
