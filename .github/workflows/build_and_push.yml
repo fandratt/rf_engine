@@ -36,3 +36,6 @@ jobs:
 
     - name: Logout from Docker Hub
       run: docker logout
+
+    - name: Set Docker Image URL as an Environment Variable
+      run: echo "DOCKER_IMAGE_URL=fandratt/robotframework:latest" >> $GITHUB_ENV
