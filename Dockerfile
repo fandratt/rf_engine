@@ -21,7 +21,7 @@ RUN apt-get update \
        libatspi2.0-0 libcups2 libdbus-1-3 libgbm1 libgtk-3-0 libnspr4 libnss3 \
        libxcomposite1 libxkbcommon0 libxrandr2 xdg-utils ntpdate openssl
 
-RUN apt-get install libxml2-dev libxslt-dev python-dev -y
+RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 
 WORKDIR /app
 COPY ./requirements.txt /app
