@@ -1,9 +1,5 @@
 name: Build and Push Docker Image
 
-# on:
-#   push:
-#     branches:
-#       - dev
 on:
   pull_request:
     types:
@@ -13,10 +9,6 @@ on:
     paths:
       - Dockerfile
       - requirements.txt
-# on:
-#   push:
-#     branches:
-#       - trial/**
 
 jobs:
   build:
@@ -37,7 +29,7 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:trial
+        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:latest
 
 
       env:
@@ -47,4 +39,4 @@ jobs:
       run: docker logout
 
     - name: Set Docker Image URL as an Environment Variable
-      run: echo "DOCKER_IMAGE_URL=fandratt/robotframework:trial" >> $GITHUB_ENV
+      run: echo "DOCKER_IMAGE_URL=fandratt/robotframework:latest" >> $GITHUB_ENV
