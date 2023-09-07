@@ -30,6 +30,7 @@ jobs:
           -t rf_engine:latest \
           .
         docker tag rf_engine:latest fandratt/robotframework:trial
+        docker images
         docker push fandratt/robotframework:trial
 
       env:
