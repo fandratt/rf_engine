@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - dev
+# on:
+#   pull_request:
+#     types:
+#       - closed
+#     branches:
+#       - master
+#     paths:
+#       - Dockerfile
+#       - requirements.txt
 
 jobs:
   build:
@@ -22,20 +31,6 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-    # - name: Build and Push Docker Image
-    #   run: |
-    #     docker buildx create --use
-    #     docker buildx build --platform linux/amd64,linux/arm64 -t rf_engine:latest .
-    #     docker buildx tag rf_engine:latest fandratt/robotframework:trial
-    #     docker buildx images
-    #     docker buildx push fandratt/robotframework:trial
-    # - name: Build and Push Docker Image
-    #   run: |
-    #     docker buildx create --name mybuilder --use
-    #     docker buildx build --builder mybuilder --platform linux/amd64,linux/arm64 -t rf_engine:latest .
-    #     docker buildx tag rf_engine:latest fandratt/robotframework:trial
-    #     docker buildx images
-    #     docker buildx push fandratt/robotframework:trial
     - name: Build and Push Docker Image
       run: |
         docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:trial
