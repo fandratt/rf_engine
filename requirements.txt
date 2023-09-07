@@ -6,7 +6,7 @@ robotframework
 robotframework-sshlibrary
 selenium<=4.0.0
 robotframework-seleniumlibrary
-requests==2.27.1
+requests==2.31.0
 robotframework-jsonlibrary
 Appium-Python-Client
 robotframework-appiumlibrary
