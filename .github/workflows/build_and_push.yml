@@ -13,6 +13,10 @@ on:
 #     paths:
 #       - Dockerfile
 #       - requirements.txt
+# on:
+#   push:
+#     branches:
+#       - trial/**
 
 jobs:
   build:
