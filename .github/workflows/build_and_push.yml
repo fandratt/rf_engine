@@ -38,7 +38,7 @@ jobs:
     #     docker buildx push fandratt/robotframework:trial
     - name: Build and Push Docker Image
       run: |
-        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t test:latest -t test:${CI_COMMIT_SHORT_SHA}
+        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:trial
 
 
       env:
