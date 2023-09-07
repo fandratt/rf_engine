@@ -29,13 +29,21 @@ jobs:
     #     docker buildx tag rf_engine:latest fandratt/robotframework:trial
     #     docker buildx images
     #     docker buildx push fandratt/robotframework:trial
+    # - name: Build and Push Docker Image
+    #   run: |
+    #     docker buildx create --use
+    #     docker buildx build --builder mybuilder --platform linux/amd64,linux/arm64 -t rf_engine:latest .
+    #     docker buildx tag rf_engine:latest fandratt/robotframework:trial
+    #     docker buildx images
+    #     docker buildx push fandratt/robotframework:trial
     - name: Build and Push Docker Image
       run: |
-        docker buildx create --use
+        docker buildx create --name mybuilder --use
         docker buildx build --builder mybuilder --platform linux/amd64,linux/arm64 -t rf_engine:latest .
         docker buildx tag rf_engine:latest fandratt/robotframework:trial
         docker buildx images
         docker buildx push fandratt/robotframework:trial
+
 
       env:
         DOCKER_CLI_ACI: "1"
