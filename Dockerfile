@@ -26,4 +26,4 @@ RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
-RUN webdrivermanager firefox --linkpath AUTO
+# RUN webdrivermanager firefox --linkpath AUTO
