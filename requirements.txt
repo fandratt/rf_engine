@@ -1,7 +1,7 @@
 monotonic
 netifaces
 webdrivermanager
-cryptography==36.0.0
+cryptography==41.0.3
 robotframework
 robotframework-sshlibrary
 selenium<=4.0.0
