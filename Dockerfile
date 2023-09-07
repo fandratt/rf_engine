@@ -1,5 +1,4 @@
-# FROM ubuntu:latest
-FROM ubuntu:18.04
+FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
     software-properties-common
 RUN add-apt-repository universe
@@ -22,12 +21,9 @@ RUN apt-get update \
        libatspi2.0-0 libcups2 libdbus-1-3 libgbm1 libgtk-3-0 libnspr4 libnss3 \
        libxcomposite1 libxkbcommon0 libxrandr2 xdg-utils ntpdate openssl
 
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get install ./google-chrome-stable_current_amd64.deb -y
-
 RUN apt-get install libxml2-dev libxslt-dev python-dev -y
 
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
-RUN webdrivermanager firefox chrome --linkpath AUTO
+RUN webdrivermanager firefox --linkpath AUTO
