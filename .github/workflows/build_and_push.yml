@@ -27,9 +27,10 @@ jobs:
         docker buildx create --use
         docker buildx build \
           --platform linux/amd64,linux/arm64 \
-          -t fandratt/robotframework:latest \
+          -t rf_engine \
           .
-        docker push fandratt/robotframework:latest
+        docker tag rf_engine fandratt/robotframework:trial
+        docker push fandratt/robotframework:trial
 
       env:
         DOCKER_CLI_ACI: "1"
@@ -38,4 +39,4 @@ jobs:
       run: docker logout
 
     - name: Set Docker Image URL as an Environment Variable
-      run: echo "DOCKER_IMAGE_URL=fandratt/robotframework:latest" >> $GITHUB_ENV
+      run: echo "DOCKER_IMAGE_URL=fandratt/robotframework:trial" >> $GITHUB_ENV
