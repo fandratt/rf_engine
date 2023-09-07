@@ -27,9 +27,9 @@ jobs:
         docker buildx create --use
         docker buildx build \
           --platform linux/amd64,linux/arm64 \
-          -t rf_engine \
+          -t rf_engine:latest \
           .
-        docker tag rf_engine fandratt/robotframework:trial
+        docker tag rf_engine:latest fandratt/robotframework:trial
         docker push fandratt/robotframework:trial
 
       env:
