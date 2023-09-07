@@ -2,17 +2,17 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get install -y \
     software-properties-common
 RUN add-apt-repository universe
-RUN apt-get update && apt-get update --fix-missing && apt-get install -y \
-    curl \
-    git \
-    python3 \
-    python3-pip \
-    libpq-dev \
-    unzip \
-    wget \
-    firefox \
-    xvfb \
-    jq
+# RUN apt-get update && apt-get update --fix-missing && apt-get install -y \
+#     curl \
+#     git \
+#     python3 \
+#     python3-pip \
+#     libpq-dev \
+#     unzip \
+#     wget \
+#     firefox \
+#     xvfb \
+#     jq
 
 # RUN pip3 install --upgrade pip
 
