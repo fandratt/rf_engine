@@ -34,5 +34,6 @@ RUN GECKODRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodri
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
-RUN webdrivermanager firefox --linkpath AUTO
+# RUN webdrivermanager firefox --linkpath AUTO
 # RUN webdrivermanager firefox --linkpath AUTO --firefox_version 0.32.2
+RUN webdrivermanager firefox --linkpath /usr/local/bin
