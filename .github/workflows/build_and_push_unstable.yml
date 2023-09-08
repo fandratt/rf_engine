@@ -24,7 +24,8 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:unstabletesting
+        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:unstable -f Dockerfile
+        docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:unstabletesting -f Dockerfile_t
 
       env:
         DOCKER_CLI_ACI: "1"
@@ -33,4 +34,6 @@ jobs:
       run: docker logout
 
     - name: Set Docker Image URL as an Environment Variable
-      run: echo "DOCKER_IMAGE_URL=fandratt/robotframework:unstabletesting" >> $GITHUB_ENV
+      run: |
+        echo "DOCKER_IMAGE_URL=fandratt/robotframework:unstable" >> $GITHUB_ENV
+        echo "DOCKER_IMAGE_URL=fandratt/robotframework:unstabletesting" >> $GITHUB_ENV
