@@ -46,8 +46,7 @@ RUN apt-get install -y chromium-browser
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
-# RUN webdrivermanager firefox --linkpath AUTO
 RUN webdrivermanager firefox chrome --linkpath AUTO
-# RUN webdrivermanager firefox --linkpath AUTO --firefox_version 0.32.2
-# RUN webdrivermanager firefox --linkpath /usr/local/bin
-# RUN webdrivermanager chrome --linkpath /usr/bin
+
+CMD ["Xvfb", ":99", "-ac", "-screen", "0", "1024x768x16"]
+ENV DISPLAY=:99
