@@ -27,11 +27,20 @@ RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 #     GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" && \
 #     curl -sSL "$GECKODRIVER_URL" | tar -xz -C /usr/local/bin
 
-RUN apt-get update && apt-get install -y firefox=114.0+build1-0ubuntu0.20.04.2
+# RUN apt-get update && apt-get install -y firefox=114.0+build1-0ubuntu0.20.04.2
+# ENV FIREFOX_VERSION 114.0
+# RUN GECKODRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")') && \
+#     GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" && \
+#     curl -sSL "$GECKODRIVER_URL" | tar -xz -C /usr/local/bin
+
+RUN curl -fsSL -o /tmp/firefox.tar.bz2 "https://download.mozilla.org/?product=firefox-114.0&os=linux64&lang=en-US"
+RUN tar xvjf /tmp/firefox.tar.bz2 -C /opt/
+RUN ln -s /opt/firefox/firefox /usr/bin/firefox
 ENV FIREFOX_VERSION 114.0
 RUN GECKODRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")') && \
     GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" && \
     curl -sSL "$GECKODRIVER_URL" | tar -xz -C /usr/local/bin
+
 
 WORKDIR /app
 COPY ./requirements.txt /app
