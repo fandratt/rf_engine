@@ -23,6 +23,10 @@ RUN apt-get update \
 
 RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 
+RUN GECKODRIVER_VERSION=0.32.2 && \
+    GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" && \
+    curl -sSL "$GECKODRIVER_URL" | tar -xz -C /usr/local/bin
+
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
