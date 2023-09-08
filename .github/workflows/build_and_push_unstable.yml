@@ -26,7 +26,6 @@ jobs:
       run: |
         docker buildx build . --platform linux/arm64,linux/amd64 --no-cache --push -t fandratt/robotframework:unstable
 
-
       env:
         DOCKER_CLI_ACI: "1"
 
