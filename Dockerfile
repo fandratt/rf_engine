@@ -25,11 +25,10 @@ RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 
 RUN apt-get install -y chromium-browser
 ENV CHROME_DRIVER /usr/lib/chromium-browser/chromedriver
-# CMD ["Xvfb", ":99", "-ac"]
 ENV DISPLAY=:99
 
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
 RUN webdrivermanager firefox chrome --linkpath AUTO
-# Xvfb :99 -ac docker run -t --rm -v ${PWD}:/app rf_engine robot -d Results --include this --exclude disableORdisabled --variable alias:FanMud --variable is_default_bs_device:True --variable is_app_browserstack:True --variable is_app_kobiton:False /app/TESTS
+CMD ["Xvfb", ":99", "-ac"]
