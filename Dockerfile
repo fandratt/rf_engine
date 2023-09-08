@@ -10,7 +10,7 @@ RUN apt-get update && apt-get update --fix-missing && apt-get install -y \
     libpq-dev \
     unzip \
     wget \
-    firefox \
+    # firefox \
     xvfb \
     jq
 
@@ -23,11 +23,18 @@ RUN apt-get update \
 
 RUN apt-get install libxml2-dev libxslt-dev python3-dev -y
 
-RUN GECKODRIVER_VERSION=0.32.2 && \
+# RUN GECKODRIVER_VERSION=0.32.2 && \
+#     GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" && \
+#     curl -sSL "$GECKODRIVER_URL" | tar -xz -C /usr/local/bin
+
+RUN apt-get update && apt-get install -y firefox=78.0.2+build1-0ubuntu0.20.04.2
+ENV FIREFOX_VERSION 78.0.2
+RUN GECKODRIVER_VERSION=$(curl -sS https://api.github.com/repos/mozilla/geckodriver/releases/latest | grep -oP '"tag_name": "\K(.*)(?=")') && \
     GECKODRIVER_URL="https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" && \
     curl -sSL "$GECKODRIVER_URL" | tar -xz -C /usr/local/bin
 
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
-RUN webdrivermanager firefox --linkpath AUTO
+# RUN webdrivermanager firefox --linkpath AUTO
+# RUN webdrivermanager firefox --linkpath AUTO --firefox_version 0.32.2
