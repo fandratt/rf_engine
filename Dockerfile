@@ -5,7 +5,8 @@ RUN apk add --no-cache \
     chromium-chromedriver \
     python3 \
     py3-pip \
-    xvfb
+    xvfb \
+    musl-dev
 
 RUN pip3 install --upgrade pip
 
