@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     jq \
     chromium-browser \
     chromium-chromedriver \
+    firefox \
     libasound2 \
     libatk-bridge2.0-0 \
     libatk1.0-0 \
@@ -29,5 +30,6 @@ RUN pip3 install --upgrade pip
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
+RUN webdrivermanager firefox --linkpath AUTO
 ENV DISPLAY=:99
 CMD ["Xvfb", ":99", "-ac"]
