@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 
-# Instalasi dependensi yang diperlukan
 RUN apt-get update && apt-get install -y \
     curl \
     git \
@@ -27,15 +26,12 @@ RUN apt-get update && apt-get install -y \
     ntpdate \
     openssl
 
-# Instalasi pip dan dependensi Python
 RUN pip3 install --upgrade pip
 
-# Buat direktori kerja Anda
 WORKDIR /app
 
-# Instalasi dependensi Python dari requirements.txt Anda
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
 
-# Set lingkungan Xvfb
 ENV DISPLAY=:99
+CMD ["Xvfb", ":99", "-ac"]
