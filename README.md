@@ -29,6 +29,12 @@ robot -d Results --include tagName /path/path/folder/
 robot -d Results -t "test case name here" /path/path/file.robot
 ```
 
+> Run using the Docker Image
+
+```sh
+docker run -t --rm -v ${PWD}:/app rf_engine robot -d Results --include this --exclude disableORdisabled --variable some_var:$some_value /app/TESTS
+```
+
 ## Docker Hub
 
 This automation requires you to install Docker. Kindly install based on your OS:
