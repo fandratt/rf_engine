@@ -38,3 +38,4 @@ PyVirtualDisplay
 robotframework-excellentlibrary
 robotframework-excellib
 robotframework-doctestlibrary
+python-dotenv
