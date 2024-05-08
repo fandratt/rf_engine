@@ -1,5 +1,6 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get install -y \
+RUN rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y -qq --no-install-recommends \
     curl \
     git \
     python3 \
