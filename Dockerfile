@@ -1,31 +1,31 @@
 FROM ubuntu:latest
 RUN rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y -qq --no-install-recommends \
-    curl \
-    git \
-    python3 \
-    python3-pip \
-    xvfb \
-    jq \
-    chromium-browser \
-    chromium-chromedriver \
-    firefox \
-    libasound2 \
-    libatk-bridge2.0-0 \
-    libatk1.0-0 \
-    libatspi2.0-0 \
-    libcups2 \
-    libdbus-1-3 \
-    libgbm1 \
-    libgtk-3-0 \
-    libnspr4 \
-    libnss3 \
-    libxcomposite1 \
-    libxkbcommon0 \
-    libxrandr2 \
-    xdg-utils \
-    ntpdate \
-    openssl
+RUN apt-get update
+RUN apt-get install -y -qq --no-install-recommends curl
+RUN apt-get install -y -qq --no-install-recommends git
+RUN apt-get install -y -qq --no-install-recommends python3
+RUN apt-get install -y -qq --no-install-recommends python3-pip
+RUN apt-get install -y -qq --no-install-recommends xvfb
+RUN apt-get install -y -qq --no-install-recommends jq
+RUN apt-get install -y -qq --no-install-recommends chromium-browser
+RUN apt-get install -y -qq --no-install-recommends chromium-chromedriver
+RUN apt-get install -y -qq --no-install-recommends firefox
+RUN apt-get install -y -qq --no-install-recommends libasound2
+RUN apt-get install -y -qq --no-install-recommends libatk-bridge2.0-0
+RUN apt-get install -y -qq --no-install-recommends libatk1.0-0
+RUN apt-get install -y -qq --no-install-recommends libatspi2.0-0
+RUN apt-get install -y -qq --no-install-recommends libcups2
+RUN apt-get install -y -qq --no-install-recommends libdbus-1-3
+RUN apt-get install -y -qq --no-install-recommends libgbm1
+RUN apt-get install -y -qq --no-install-recommends libgtk-3-0
+RUN apt-get install -y -qq --no-install-recommends libnspr4
+RUN apt-get install -y -qq --no-install-recommends libnss3
+RUN apt-get install -y -qq --no-install-recommends libxcomposite1
+RUN apt-get install -y -qq --no-install-recommends libxkbcommon0
+RUN apt-get install -y -qq --no-install-recommends libxrandr2
+RUN apt-get install -y -qq --no-install-recommends xdg-utils
+RUN apt-get install -y -qq --no-install-recommends ntpdate
+RUN apt-get install -y -qq --no-install-recommends openssl
 
 RUN pip3 install --upgrade pip
 WORKDIR /app
