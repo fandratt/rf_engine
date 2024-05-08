@@ -1,4 +1,7 @@
-FROM ubuntu:20.04
+FROM ubuntu:23.04
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get update
 RUN apt-get install -y -qq curl
