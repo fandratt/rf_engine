@@ -25,7 +25,7 @@ RUN apt-get install -y -qq firefox
 # RUN apt-get install -y -qq libxrandr2
 RUN apt-get install -y -qq xdg-utils
 RUN apt-get install -y -qq ntpdate
-# RUN apt-get install -y -qq openssl
+RUN apt-get install -y -qq openssl
 
 RUN pip3 install --upgrade pip
 WORKDIR /app
