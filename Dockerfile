@@ -1,15 +1,15 @@
 FROM ubuntu:latest
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get update
-RUN apt-get install -y -qq --no-install-recommends curl
-RUN apt-get install -y -qq --no-install-recommends git
-RUN apt-get install -y -qq --no-install-recommends python3
-RUN apt-get install -y -qq --no-install-recommends python3-pip
-RUN apt-get install -y -qq --no-install-recommends xvfb
-RUN apt-get install -y -qq --no-install-recommends jq
-RUN apt-get install -y -qq --no-install-recommends chromium-browser
-RUN apt-get install -y -qq --no-install-recommends chromium-chromedriver
-RUN apt-get install -y -qq --no-install-recommends firefox
+RUN apt-get install -y -qq curl
+RUN apt-get install -y -qq git
+RUN apt-get install -y -qq python3
+RUN apt-get install -y -qq python3-pip
+RUN apt-get install -y -qq xvfb
+RUN apt-get install -y -qq jq
+RUN apt-get install -y -qq chromium-browser
+RUN apt-get install -y -qq chromium-chromedriver
+RUN apt-get install -y -qq firefox
 # RUN apt-get install -y -qq --no-install-recommends libasound2
 RUN apt-get install -y -qq --no-install-recommends libatk-bridge2.0-0
 RUN apt-get install -y -qq --no-install-recommends libatk1.0-0
