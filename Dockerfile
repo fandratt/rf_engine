@@ -1,4 +1,4 @@
-FROM ubuntu:23.04
+FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 
@@ -31,7 +31,7 @@ RUN apt-get install -y -qq xdg-utils
 RUN apt-get install -y -qq ntpdate
 RUN apt-get install -y -qq openssl
 
-# RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
