@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install -y -qq curl
 RUN apt-get install -y -qq git
 RUN apt-get install -y -qq python3
-RUN apt-get install --reinstall -y python3
+# RUN apt-get install --reinstall -y python3
 RUN apt-get install -y python3-pip
 RUN apt-get install -y -qq xvfb
 RUN apt-get install -y -qq jq
