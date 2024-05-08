@@ -14,7 +14,7 @@ RUN apt-get install -y -qq jq
 RUN apt-get install -y -qq chromium-browser
 RUN apt-get install -y -qq chromium-chromedriver
 RUN apt-get install -y -qq firefox
-RUN apt-get install -y -qq libasound2
+# RUN apt-get install -y -qq libasound2
 RUN apt-get install -y -qq libatk-bridge2.0-0
 RUN apt-get install -y -qq libatk1.0-0
 RUN apt-get install -y -qq libatspi2.0-0
