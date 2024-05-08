@@ -10,7 +10,7 @@ RUN apt-get install -y -qq --no-install-recommends jq
 RUN apt-get install -y -qq --no-install-recommends chromium-browser
 RUN apt-get install -y -qq --no-install-recommends chromium-chromedriver
 RUN apt-get install -y -qq --no-install-recommends firefox
-RUN apt-get install -y -qq --no-install-recommends libasound2
+# RUN apt-get install -y -qq --no-install-recommends libasound2
 RUN apt-get install -y -qq --no-install-recommends libatk-bridge2.0-0
 RUN apt-get install -y -qq --no-install-recommends libatk1.0-0
 RUN apt-get install -y -qq --no-install-recommends libatspi2.0-0
