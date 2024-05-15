@@ -19,6 +19,6 @@ RUN pip3 install --upgrade pip
 WORKDIR /app
 COPY ./requirements.txt /app
 RUN pip3 install -r requirements.txt
-RUN webdrivermanager firefox --linkpath AUTO
+RUN webdrivermanager firefox chrome --linkpath AUTO
 ENV DISPLAY=:99
 CMD ["Xvfb", ":99", "-ac"]
