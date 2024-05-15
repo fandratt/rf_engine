@@ -15,6 +15,7 @@ RUN apt-get install -y -qq chromium-chromedriver
 RUN apt-get install -y -qq firefox
 RUN apt-get install -y -qq openssl
 
+RUN ls -la /usr/local/bin
 RUN chmod +x /usr/local/bin/chromedriver
 RUN apt-get install -y libxss1 libappindicator1 libindicator7
 
