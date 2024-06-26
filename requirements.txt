@@ -13,7 +13,7 @@ robotframework-appiumlibrary==2.0.0
 robotframework-databaselibrary==1.2.4
 requests
 robotframework-requests==0.9.7
-jsonpath==0.82
+jsonpath
 python-dateutil==2.8.2
 PyMySQL==1.0.2
 mongo-connector==3.1.1
