@@ -2,17 +2,18 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=UTC
 
-RUN apt-get update && apt-get install --no-install-recommends -y -qq curl \
-    && git \
-    && python3 \
-    && python3-pip \
-    && xvfb \
-    && jq \
-    && chromium-browser \
-    && chromium-chromedriver \
-    && firefox \
-    && openssl \
-    && libxss1 libappindicator1 libindicator7 \
+RUN apt-get update && apt-get install --no-install-recommends -y -qq \
+    curl \
+    git \
+    python3 \
+    python3-pip \
+    xvfb \
+    jq \
+    chromium-browser \
+    chromium-chromedriver \
+    firefox \
+    openssl \
+    libxss1 libappindicator1 libindicator7 \
     && apt-get clean \
     && apt-get purge -y --auto-remove \
     && rm -rf /var/lib/apt/lists/*
