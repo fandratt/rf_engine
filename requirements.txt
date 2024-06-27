@@ -34,7 +34,7 @@ pymongo==4.0.1
 jsonschema==4.3.2
 pyyaml==6.0
 cassandra-driver==3.25.0
-# fnvhash==0.1.0
+fnvhash==0.1.0
 # openpyxl==3.0.9
 # chardet==4.0.0
 # urllib3==1.26.7
