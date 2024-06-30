@@ -22,9 +22,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y -qq \
     && apt-get purge -y --auto-remove \
     && rm -rf /var/lib/apt/lists/*
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
-&& apt-get install -y nodejs \
-&& npm install -g npm@latest
+RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm@latest
 
 RUN npm install -g appium
 
